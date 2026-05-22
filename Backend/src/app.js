@@ -7,7 +7,9 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: [
+        "https://resumeai-backend-of01.onrender.com"
+    ],
     credentials: true
 }))
 /* require all the routes here */
