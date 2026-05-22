@@ -64,7 +64,6 @@
 //     }
 
 // }
-
 import axios from "axios"
 
 const api = axios.create({
@@ -72,20 +71,9 @@ const api = axios.create({
     withCredentials: true
 })
 
-// ADD TOKEN AUTOMATICALLY
-api.interceptors.request.use((config) => {
-
-    const token = localStorage.getItem("token")
-
-    if (token) {
-
-        config.headers.Authorization =
-            `Bearer ${token}`
-    }
-
-    return config
-})
-
+/**
+ * REGISTER
+ */
 export async function register({
     username,
     email,
@@ -103,15 +91,6 @@ export async function register({
             }
         )
 
-        // SAVE TOKEN
-        if (response.data.token) {
-
-            localStorage.setItem(
-                "token",
-                response.data.token
-            )
-        }
-
         return response.data
 
     } catch (err) {
@@ -122,6 +101,9 @@ export async function register({
     }
 }
 
+/**
+ * LOGIN
+ */
 export async function login({
     email,
     password
@@ -137,15 +119,6 @@ export async function login({
             }
         )
 
-        // SAVE TOKEN
-        if (response.data.token) {
-
-            localStorage.setItem(
-                "token",
-                response.data.token
-            )
-        }
-
         return response.data
 
     } catch (err) {
@@ -156,6 +129,9 @@ export async function login({
     }
 }
 
+/**
+ * LOGOUT
+ */
 export async function logout() {
 
     try {
@@ -164,8 +140,6 @@ export async function logout() {
             "/api/auth/logout"
         )
 
-        localStorage.removeItem("token")
-
         return response.data
 
     } catch (err) {
@@ -176,6 +150,9 @@ export async function logout() {
     }
 }
 
+/**
+ * GET CURRENT USER
+ */
 export async function getMe() {
 
     try {
