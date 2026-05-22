@@ -223,7 +223,7 @@ Rules:
 
         })
 
-        let text = response.text
+        let text = response.text()
 
         // Remove markdown
         text = text.replace(/```json/g, "")
