@@ -41,7 +41,6 @@
 
 
 // module.exports = { authUser }
-
 const jwt = require("jsonwebtoken")
 const tokenBlacklistModel = require("../models/blacklist.model")
 
@@ -49,8 +48,10 @@ async function authUser(req, res, next) {
 
     try {
 
-        // GET TOKEN FROM COOKIE
-        const token = req.cookies.token
+        // GET TOKEN FROM COOKIE OR AUTH HEADER
+        const token =
+            req.cookies.token ||
+            req.headers.authorization?.split(" ")[1]
 
         console.log("TOKEN:", token)
 
