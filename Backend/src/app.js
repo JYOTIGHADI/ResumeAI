@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin: "http://localhost:5173",
-    origin: "https://resumeai-frontend-1m1q.onrender.com",
+    origin: "https://resumeai-frontend-scpf.onrender.com",
     credentials: true
 }))
 
