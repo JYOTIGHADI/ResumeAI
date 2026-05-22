@@ -201,12 +201,12 @@ async function registerUserController(req, res) {
         )
 
         // FIXED COOKIE
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            maxAge: 1000 * 60 * 60 * 24 * 100
-        })
+       res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 1000 * 60 * 60 * 24 * 100
+})
 
         res.status(201).json({
             message: "User registered successfully",
@@ -274,12 +274,12 @@ async function loginUserController(req, res) {
         )
 
         // FIXED COOKIE
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            maxAge: 1000 * 60 * 60 * 24 * 100
-        })
+       res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 1000 * 60 * 60 * 24 * 100
+})
 
         res.status(200).json({
             message: "User logged in successfully",
