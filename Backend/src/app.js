@@ -10,7 +10,7 @@ app.use(cookieParser())
 
 app.use(cors({
     origin: [
-        "https://resumeai-frontend-xsza.onrender.com"
+        "https://resumeai-frontend-qe6t.onrender.com"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
