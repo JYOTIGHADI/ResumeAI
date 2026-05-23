@@ -4,23 +4,20 @@
   "description": "ATS Resume Analyzer",
   "main": "server.js",
   "type": "commonjs",
-
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
-
   "keywords": [
     "resume",
     "ats",
     "ai",
     "mern"
   ],
-
   "license": "ISC",
-
   "dependencies": {
     "@google/genai": "^2.2.0",
+    "@sparticuz/chromium": "^147.0.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
@@ -30,11 +27,9 @@
     "mongoose": "^9.6.2",
     "multer": "^2.1.1",
     "pdf-parse": "^2.4.5",
-    "puppeteer": "^24.43.1",
     "zod": "^4.4.3",
     "zod-to-json-schema": "^3.25.2"
   },
-
   "devDependencies": {
     "nodemon": "^3.1.14"
   }
