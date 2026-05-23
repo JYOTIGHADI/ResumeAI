@@ -9,12 +9,8 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin: [
-        "https://resumeai-frontend-qe6t.onrender.com"
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    origin: "https://resumeai-frontend-qe6t.onrender.com",
+    credentials: true
 }))
 
 /* require all the routes here */
